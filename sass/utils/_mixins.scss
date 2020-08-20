@@ -1,0 +1,11 @@
+@mixin transition(
+  $prop: color,
+  $dur: 250ms,
+  $function: cubic-bezier(0.4, 0, 0.2, 1)
+) {
+  transition-property: $prop;
+  transition-duration: $dur;
+  transition-timing-function: $function;
+}
+
+/* @include transition($prop: background-color);*/

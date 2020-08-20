@@ -1,0 +1,37 @@
+.clients {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.client-title {
+  @extend %style-for-title;
+}
+
+.client-list {
+  justify-content: space-between;
+}
+
+.clients-logo {
+  fill: #afb1b8;
+  @include transition($prop: fill);
+}
+
+.client-list-link {
+  @extend %centering;
+  @include transition($prop: border-color);
+
+  width: 170px;
+  height: 90px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+
+  &:hover,
+  &:focus {
+    border-color: $accent-color;
+  }
+}
+
+.client-list-link:hover .clients-logo,
+.client-list-link:focus .clients-logo {
+  fill: $accent-color;
+}

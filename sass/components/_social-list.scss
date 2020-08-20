@@ -1,0 +1,30 @@
+.social-list {
+  @extend %centering;
+}
+
+.social-list-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-icons {
+  fill: #afb1b8;
+
+  @include transition($prop: fill);
+
+  .social-link:hover > &,
+  .social-link:focus > & {
+    fill: $primary-white;
+  }
+}
+
+.social-link {
+  @extend %centering;
+
+  @include transition($prop: background-color);
+
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  border-radius: 50%;
+  background-color: $primary-white;
+}

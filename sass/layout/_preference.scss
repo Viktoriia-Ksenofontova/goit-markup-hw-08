@@ -1,0 +1,40 @@
+/*секция - Наши преимущества*/
+
+.preference {
+  padding-top: 94px;
+  padding-bottom: 47px;
+}
+.preference-item {
+  min-width: 270px;
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.preference-item-svg {
+  @extend %centering;
+
+  min-width: 270px;
+  height: 120px;
+  background-color: $filter-background-color;
+  margin-bottom: 30px;
+}
+.icons {
+  fill: $title-text-color;
+}
+
+.preference-subtitle {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: $title-text-color;
+}
+.preference-description {
+  margin: 0;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}

@@ -1,0 +1,222 @@
+.modal-form {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 528px;
+  height: 581px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  animation-name: backdrop-visibility;
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  @extend %centering;
+
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+.modal-form-icon-close {
+  fill: inherit;
+
+  @include transition($prop: fill);
+
+  .modal-close-btn:hover > &,
+  .modal-close-btn:focus > & {
+    fill: $accent-color;
+  }
+}
+
+.modal-form-title {
+  margin-bottom: 30px;
+  font-family: $primary-font-family;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: $title-text-color;
+}
+
+.modal-form-user-name,
+.modal-form-user-telephone,
+.modal-form-user-email {
+  position: relative;
+  margin-bottom: 28px;
+}
+.modal-form-input {
+  padding-left: 42px;
+  height: 40px;
+}
+
+.modal-form-input,
+.modal-form-comment {
+  @include transition($prop: border-color);
+
+  width: 448px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  font-family: $primary-font-family;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  color: $primary-text-color;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    border-color: $accent-color;
+  }
+}
+
+.modal-form-label {
+  position: absolute;
+  top: 12px;
+  left: 42px;
+
+  @include transition($prop: all);
+}
+
+.modal-form-icons {
+  position: absolute;
+  top: 11px;
+  left: 16px;
+
+  @include transition($prop: fill);
+}
+
+.modal-form-input:focus ~ .modal-form-icons {
+  fill: $accent-color;
+}
+
+.modal-form-user-comment {
+  position: relative;
+
+  .modal-form-label {
+    left: 16px;
+  }
+}
+
+.modal-form-comment {
+  height: 120px;
+  margin-bottom: 20px;
+  resize: none;
+  padding-top: 12px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+}
+
+.modal-form-comment:focus + .modal-form-label,
+.modal-form-comment:not(:placeholder-shown) + .modal-form-label {
+  transform: translateY(-30px);
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: $accent-color;
+}
+
+.user-agreement {
+  position: relative;
+  width: 448px;
+  margin-bottom: 30px;
+  padding-left: 42px;
+}
+
+.accent-agreement {
+  display: inline-block;
+  line-height: 0.85;
+  border-bottom: 1px solid $accent-color;
+  cursor: pointer;
+  color: $accent-color;
+}
+
+.agreement-checkbox {
+  appearance: none;
+  position: absolute;
+}
+
+.icon-check {
+  @include transition($prop: all);
+
+  position: absolute;
+  top: 0;
+  left: 16px;
+  fill: #fff;
+  stroke: #fff;
+  border: 1px solid #212121;
+  background-color: #fff;
+
+  .agreement-checkbox:checked + & {
+    border: none;
+    background-color: $accent-color;
+  }
+}
+
+.modal-form-input:focus + .modal-form-label,
+.modal-form-input:not(:placeholder-shown) + .modal-form-label {
+  top: -16px;
+  left: 16px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: $accent-color;
+}
+
+/*.modal-form-input:not(:placeholder-shown):valid {
+  border-color: green;
+}
+.modal-form-input:not(:placeholder-shown):invalid {
+  border-color: red;
+}
+*/
+
+.modal-form-btn {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 200px;
+  height: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+
+  font-family: $primary-font-family;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background-color: #2196f3;
+  @include transition($prop: background-color);
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: #188ce8;
+  }
+}
