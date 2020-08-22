@@ -2,30 +2,59 @@
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 94px;
-  padding-bottom: 94px;
   background-color: #f5f4fa;
+  @media screen and (max-width: 1199px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
+
+.team-title {
+  @extend %style-for-title;
+}
+
+.team-list {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .team-item {
-  width: 270px;
+  /*width: 270px;*/
   padding-bottom: 24px;
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12);
   background-color: $primary-white;
 
-  &:not(:last-child) {
-    margin-right: 30px;
-  }
-
   img {
+    width: 100%;
     margin-bottom: 30px;
   }
-}
 
-.team-title {
-  @extend %style-for-title;
+  &:not(:last-child) {
+    @media screen and (min-width: 1200px) {
+      margin-right: 30px;
+    }
+    @media screen and (max-width: 767px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    width: calc((100% - 60px) / 2);
+    &:nth-child(2n + 1) {
+      margin-right: 30px;
+    }
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 30px;
+    }
+  }
 }
 
 .team-subtitle {

@@ -361,6 +361,13 @@ template {
   color: #212121;
 }
 
+@media screen and (max-width: 1199px) {
+  .services-title, .team-title, .client-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+}
+
 .modal-close-btn, .social-list, .social-link, .preference-item-svg, .client-list-link {
   display: flex;
   justify-content: center;
@@ -407,7 +414,6 @@ img {
 }
 
 .list {
-  /*display: flex;*/
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1127,20 +1133,52 @@ img {
 
 /*секция - Наши преимущества*/
 .preference {
-  padding-top: 94px;
-  padding-bottom: 47px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
-.preference-item {
-  min-width: 270px;
+@media screen and (min-width: 1200px) {
+  .preference {
+    padding-top: 94px;
+    padding-bottom: 47px;
+  }
 }
 
-.preference-item:not(:last-child) {
-  margin-right: 30px;
+.preference-list {
+  display: flex;
+}
+
+@media screen and (max-width: 1199px) {
+  .preference-list {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .preference-item {
+    width: calc((100% - 60px) / 2);
+  }
+  .preference-item:nth-child(2n + 1) {
+    margin-right: 30px;
+  }
+  .preference-item:not(:nth-last-child(-n + 2)) {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .preference-item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .preference-item:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
 .preference-item-svg {
-  min-width: 270px;
   height: 120px;
   background-color: #f5f4fa;
   margin-bottom: 30px;
@@ -1160,6 +1198,12 @@ img {
   color: #212121;
 }
 
+@media screen and (max-width: 767px) {
+  .preference-subtitle {
+    text-align: center;
+  }
+}
+
 .preference-description {
   margin: 0;
   line-height: 1.71;
@@ -1170,6 +1214,16 @@ img {
 .services {
   padding-top: 47px;
   padding-bottom: 94px;
+}
+
+@media screen and (max-width: 1199px) {
+  .services {
+    display: none;
+  }
+}
+
+.services-list {
+  display: flex;
 }
 
 .services-item {
@@ -1202,25 +1256,65 @@ img {
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 94px;
-  padding-bottom: 94px;
   background-color: #f5f4fa;
 }
 
+@media screen and (max-width: 1199px) {
+  .team {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .team {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .team-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 .team-item {
-  width: 270px;
+  /*width: 270px;*/
   padding-bottom: 24px;
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
   background-color: #ffffff;
 }
 
-.team-item:not(:last-child) {
-  margin-right: 30px;
+.team-item img {
+  width: 100%;
+  margin-bottom: 30px;
 }
 
-.team-item img {
-  margin-bottom: 30px;
+@media screen and (min-width: 1200px) {
+  .team-item:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .team-item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .team-item {
+    width: calc((100% - 60px) / 2);
+  }
+  .team-item:nth-child(2n + 1) {
+    margin-right: 30px;
+  }
+  .team-item:not(:nth-last-child(-n + 2)) {
+    margin-bottom: 30px;
+  }
 }
 
 .team-subtitle {
