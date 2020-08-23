@@ -492,13 +492,11 @@ img {
 
 .modal-form {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  width: 528px;
-  height: 581px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
   padding: 40px;
   background-color: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -506,6 +504,20 @@ img {
   animation-name: backdrop-visibility;
   animation-duration: 250ms;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (max-width: 1199px) {
+  .modal-form {
+    width: 450px;
+    height: 609px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal-form {
+    width: 528px;
+    height: 581px;
+  }
 }
 
 .modal-close-btn {
@@ -561,7 +573,6 @@ img {
   transition-property: border-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  width: 448px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   font-family: "Roboto", sans-serif;
@@ -578,6 +589,20 @@ img {
 .modal-form-comment:focus {
   outline: none;
   border-color: #2196f3;
+}
+
+@media screen and (max-width: 1199px) {
+  .modal-form-input,
+  .modal-form-comment {
+    width: 370px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal-form-input,
+  .modal-form-comment {
+    width: 448px;
+  }
 }
 
 .modal-form-label {
@@ -631,9 +656,23 @@ img {
 
 .user-agreement {
   position: relative;
-  width: 448px;
   margin-bottom: 30px;
-  padding-left: 42px;
+}
+
+@media screen and (max-width: 1199px) {
+  .user-agreement {
+    width: 370px;
+    font-size: 12px;
+    line-height: 1.17;
+    padding-left: 24px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .user-agreement {
+    width: 448px;
+    padding-left: 42px;
+  }
 }
 
 .accent-agreement {
@@ -660,6 +699,12 @@ img {
   stroke: #fff;
   border: 1px solid #212121;
   background-color: #fff;
+}
+
+@media screen and (max-width: 1199px) {
+  .icon-check {
+    left: 0;
+  }
 }
 
 .agreement-checkbox:checked + .icon-check {
@@ -1452,18 +1497,26 @@ footer .container {
   padding-bottom: 60px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   footer .container {
     display: flex;
+    justify-content: space-between;
     align-items: baseline;
-    flex-wrap: wrap;
-    justify-content: center;
   }
 }
 
-@media screen and (min-width: 1200px) {
-  footer .container {
-    justify-content: space-between;
+@media screen and (max-width: 1199px) {
+  .preform {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .preform {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
   }
 }
 
@@ -1478,17 +1531,15 @@ footer .container {
   }
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (min-width: 1200px) {
   .footer-left {
-    text-align: center;
-    margin-bottom: 60px;
+    margin-right: 70px;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 767px) {
   .footer-left {
-    margin-right: 69px;
-    min-width: 231px;
+    margin-bottom: 60px;
   }
 }
 
@@ -1516,26 +1567,6 @@ footer .container {
   }
 }
 
-@media screen and (max-width: 1199px) {
-  .footer-center {
-    text-align: center;
-    margin-bottom: 60px;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-  .footer-center {
-    margin-left: 165px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .footer-center {
-    min-width: 206px;
-    margin-right: 94px;
-  }
-}
-
 .footer-center .social-link {
   background-color: rgba(255, 255, 255, 0.1);
 }
@@ -1550,7 +1581,7 @@ footer .container {
 }
 
 .call-to-action {
-  display: block;
+  display: inline-block;
   margin-bottom: 20px;
   font-weight: 700;
   line-height: 1.14;
@@ -1558,10 +1589,13 @@ footer .container {
   text-transform: uppercase;
 }
 
+/*стилизация формы в футере*/
 @media screen and (max-width: 1199px) {
   .form-submit {
     width: 450px;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -1571,7 +1605,6 @@ footer .container {
   }
 }
 
-/*стилизация формы в футере*/
 @media screen and (min-width: 1200px) {
   .form-submit form {
     display: flex;
@@ -1589,16 +1622,9 @@ footer .container {
   color: #ffffff;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1199px) {
   .form-submit-email {
     width: 100%;
-    margin-bottom: 20px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .form-submit-email {
-    width: 450px;
     margin-bottom: 20px;
   }
 }

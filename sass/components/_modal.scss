@@ -1,12 +1,11 @@
 .modal-form {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  width: 528px;
-  height: 581px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+
   padding: 40px;
 
   background-color: #ffffff;
@@ -16,6 +15,15 @@
   animation-name: backdrop-visibility;
   animation-duration: 250ms;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (max-width: 1199px) {
+    width: 450px;
+    height: 609px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+    height: 581px;
+  }
 }
 
 .modal-close-btn {
@@ -71,7 +79,6 @@
 .modal-form-comment {
   @include transition($prop: border-color);
 
-  width: 448px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 
@@ -87,6 +94,12 @@
   &:focus {
     outline: none;
     border-color: $accent-color;
+  }
+  @media screen and (max-width: 1199px) {
+    width: 370px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 448px;
   }
 }
 
@@ -139,9 +152,18 @@
 
 .user-agreement {
   position: relative;
-  width: 448px;
   margin-bottom: 30px;
-  padding-left: 42px;
+
+  @media screen and (max-width: 1199px) {
+    width: 370px;
+    font-size: 12px;
+    line-height: 1.17;
+    padding-left: 24px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 448px;
+    padding-left: 42px;
+  }
 }
 
 .accent-agreement {
@@ -167,7 +189,9 @@
   stroke: #fff;
   border: 1px solid #212121;
   background-color: #fff;
-
+  @media screen and (max-width: 1199px) {
+    left: 0;
+  }
   .agreement-checkbox:checked + & {
     border: none;
     background-color: $accent-color;
