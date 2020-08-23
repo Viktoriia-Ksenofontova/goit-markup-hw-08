@@ -1,25 +1,47 @@
 .works {
-  border-top: 1px solid #ececec;
-
   .container {
-    padding-top: 93px;
-    padding-bottom: 94px;
+    @media screen and (max-width: 1199px) {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    @media screen and (min-width: 1200px) {
+      padding-top: 93px;
+      padding-bottom: 94px;
+    }
   }
 }
 .works-examples {
-  flex-wrap: wrap;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .works-examples-item {
-  max-width: 370px;
-  margin-bottom: 30px;
   border: 1px solid #eeeeee;
-
-  &:not(:nth-child(3n)) {
-    margin-right: 30px;
+  @media screen and (max-width: 767px) {
+    width: calc(100%);
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
   }
-  &:nth-last-child(-n + 3) {
-    margin-bottom: 0;
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    width: calc((100% - 30px) / 2);
+    &:nth-child(2n + 1) {
+      margin-right: 30px;
+    }
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    width: calc((100% - 60px) / 3);
+    &:not(:nth-child(3n)) {
+      margin-right: 30px;
+    }
+    &:not(:nth-last-child(-n + 3)) {
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -64,8 +86,14 @@
   overflow: hidden;
 
   margin-bottom: 20px;
-  width: 370px;
-  height: 294px;
+  @media screen and (max-width: 1199px) {
+    width: 100%;
+    height: 100%;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 370px;
+    height: 294px;
+  }
 }
 .works-examples-description {
   display: inline-block;
@@ -76,12 +104,9 @@
   height: 100%;
   transform: translateY(100%);
   @include transition($prop: transform);
-
-  margin: 0;
-  padding-top: 63px;
   padding-right: 24px;
-  padding-bottom: 63px;
   padding-left: 24px;
+  margin: 0;
 
   font-size: 18px;
   font-weight: 400;
@@ -89,6 +114,13 @@
   letter-spacing: 0.03em;
   color: $primary-white;
   background-color: rgba(33, 150, 243, 0.9);
+
+  @media screen and (max-width: 1199px) {
+    padding-top: 77px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding-top: 63px;
+  }
 }
 
 .works-examples-link:hover .works-examples-description,
