@@ -16,6 +16,10 @@
   animation-duration: 250ms;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
+  @media screen and (max-width: 479px) {
+    max-width: 100%;
+  }
+
   @media screen and (max-width: 1199px) {
     width: 450px;
     height: 609px;
@@ -95,6 +99,9 @@
     outline: none;
     border-color: $accent-color;
   }
+  @media screen and (max-width: 479px) {
+    max-width: calc(100% - 30px);
+  }
   @media screen and (max-width: 1199px) {
     width: 370px;
   }
@@ -153,6 +160,9 @@
 .user-agreement {
   position: relative;
   margin-bottom: 30px;
+  @media screen and (max-width: 479px) {
+    max-width: calc(100% - 30px);
+  }
 
   @media screen and (max-width: 1199px) {
     width: 370px;

@@ -506,6 +506,12 @@ img {
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@media screen and (max-width: 479px) {
+  .modal-form {
+    max-width: 100%;
+  }
+}
+
 @media screen and (max-width: 1199px) {
   .modal-form {
     width: 450px;
@@ -591,6 +597,13 @@ img {
   border-color: #2196f3;
 }
 
+@media screen and (max-width: 479px) {
+  .modal-form-input,
+  .modal-form-comment {
+    max-width: calc(100% - 30px);
+  }
+}
+
 @media screen and (max-width: 1199px) {
   .modal-form-input,
   .modal-form-comment {
@@ -657,6 +670,12 @@ img {
 .user-agreement {
   position: relative;
   margin-bottom: 30px;
+}
+
+@media screen and (max-width: 479px) {
+  .user-agreement {
+    max-width: calc(100% - 30px);
+  }
 }
 
 @media screen and (max-width: 1199px) {
