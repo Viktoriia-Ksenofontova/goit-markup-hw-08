@@ -1590,6 +1590,12 @@ footer .container {
 }
 
 /*стилизация формы в футере*/
+@media screen and (max-width: 480px) {
+  .form-submit {
+    max-width: 100%;
+  }
+}
+
 @media screen and (max-width: 1199px) {
   .form-submit {
     width: 450px;

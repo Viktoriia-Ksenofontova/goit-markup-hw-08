@@ -93,6 +93,9 @@ footer {
 }
 /*стилизация формы в футере*/
 .form-submit {
+  @media screen and (max-width: 480px) {
+    max-width: 100%;
+  }
   @media screen and (max-width: 1199px) {
     width: 450px;
     text-align: center;

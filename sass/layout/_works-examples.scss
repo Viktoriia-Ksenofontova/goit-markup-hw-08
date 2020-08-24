@@ -20,7 +20,7 @@
 .works-examples-item {
   border: 1px solid #eeeeee;
   @media screen and (max-width: 767px) {
-    width: calc(100%);
+    width: 100%;
     &:not(:last-child) {
       margin-bottom: 30px;
     }
